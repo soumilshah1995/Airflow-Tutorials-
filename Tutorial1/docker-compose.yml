@@ -1,0 +1,25 @@
+version: '3.7'
+services:
+
+
+  postgres:
+    image: postgres:9.6
+    environment:
+      - POSTGRES_USER=airflow
+      - POSTGRES_PASSWORD=airflow
+      - POSTGRES_DB=airflow
+
+  webserver:
+    build: ./dockerfiles
+    restart: always
+    depends_on:
+      - postgres
+    environment:
+      - LOAD_EX=n
+      - EXECUTOR=Local
+    volumes:
+      - ./dags:/usr/local/airflow/dags
+      - ./config/airflow.cfg:/usr/local/airflow/airflow.cfg
+    ports:
+      - "8080:8080"
+    command: webserver
