@@ -45,46 +45,5 @@ with DAG(dag_id="first_dag",
         python_callable=first_function,
     )
 
-
-
 first_function
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# ====================================Notes====================================
-
-# all_success           -> triggers when all tasks arecomplete
-# one_success           -> trigger when one task is complete
-# all_done              -> Trigger when all Tasks are Done
-# all_failed            -> Trigger when all task Failed
-# one_failed            -> one task is failed
-# none_failed           -> No Task Failed
-
-# ==============================================================================
-
-
-
-# ============================== Executor====================================
-
-# There are Three main  types of executor
-# -> Sequential Executor  run single task in linear fashion wih no parllelism default Dev
-# -> Local Exector  run each task in seperate process
-# -> Celery Executor Run each worker node within multi node architecture Most scalable
-
-# ===========================================================================
