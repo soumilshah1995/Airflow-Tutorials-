@@ -1,0 +1,11 @@
+pandas
+docker
+selenium
+bs4
+pymongo
+requests
+swifter
+numpy
+lxml
+flask-bcrypt
+boto3
